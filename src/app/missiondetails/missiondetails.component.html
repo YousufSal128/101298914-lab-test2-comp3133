@@ -1,0 +1,31 @@
+<mat-card *ngIf="mission" class="mat-elevation-z4">
+    <mat-card-header>
+        <mat-card-title>{{ mission.mission_name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="mission.links.mission_patch_small" alt="Mission Patch">
+    <mat-card-content>
+        <p><strong>Flight Number:</strong> {{ mission.flight_number }}</p>
+        <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
+        <p>{{ mission.details || 'No details available' }}</p>
+    
+        <h3>Rocket Info</h3>
+        <p><strong>Name:</strong> {{ mission.rocket.rocket_name }}</p>
+        <p><strong>Type:</strong> {{ mission.rocket.rocket_type }}</p>
+    
+        <h3>Launch Site</h3>
+        <p><strong>Name:</strong> {{ mission.launch_site.site_name }}</p>
+    
+        <h3>Launch Details</h3>
+        <p>{{ mission.details || 'No details available' }}</p>
+    
+        <h3>Links</h3>
+        <ul>
+            <li><a [href]="mission.links.article_link" target="_blank">Article</a></li>
+            <li><a [href]="mission.links.wikipedia" target="_blank">Wikipedia</a></li>
+            <li><a [href]="mission.links.video_link" target="_blank">Watch Video</a></li>
+        </ul>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="goBack()">Back to Mission List</button>
+    </mat-card-actions>
+</mat-card>

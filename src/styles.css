@@ -1,0 +1,26 @@
+.mission-container {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  mat-card {
+    max-width: 600px;
+    width: 100%;
+    margin-left: 20px; /* Adds space from the left edge */
+    padding: 16px;
+  }
+  
+  img[mat-card-image] {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    padding-left: 16px;
+  }
+  

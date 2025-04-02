@@ -1,0 +1,18 @@
+<app-missionfilter (filterYear)="filterByYear($event)"></app-missionfilter>
+
+<div *ngFor="let launch of filteredLaunches" class="mission-card">
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>{{ launch.mission_name }} ({{ launch.launch_year }})</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="launch.links.mission_patch_small" alt="Mission Patch">
+    <mat-card-content>
+      <p><strong>Flight Number:</strong> {{ launch.flight_number }}</p>
+      <p><strong>Rocket:</strong> {{ launch.rocket.rocket_name }} ({{ launch.rocket.rocket_type }})</p>
+      <p><strong>Details:</strong> {{ launch.details || 'No details available' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="selectMission(launch)">View Details</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
